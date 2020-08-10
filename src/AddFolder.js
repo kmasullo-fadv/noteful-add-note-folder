@@ -2,6 +2,7 @@ import React from 'react'
 import NotefulForm from './NotefulForm/NotefulForm'
 import ApiContext from './ApiContext'
 import config from './config'
+import PropTypes from 'prop-types'
 
 export default class AddFolder extends React.Component {
 
@@ -41,4 +42,8 @@ export default class AddFolder extends React.Component {
             </NotefulForm>
         )
     }
+}
+
+AddFolder.propTypes = {
+  history: PropTypes.object.isRequired
 }

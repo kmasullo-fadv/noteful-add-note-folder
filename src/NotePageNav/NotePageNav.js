@@ -5,6 +5,7 @@ import ApiContext from '../ApiContext'
 import { findNote, findFolder } from '../notes-helpers'
 import './NotePageNav.css'
 import NoteError from '../NoteError.js'
+import PropTypes from 'prop-types'
 
 export default class NotePageNav extends React.Component {
   static defaultProps = {
@@ -44,4 +45,9 @@ export default class NotePageNav extends React.Component {
       </NoteError>
     )
   }
+}
+
+NotePageNav.propTypes = {
+  match: PropTypes.object.isRequired,
+  history: PropTypes.object.isRequired,
 }

@@ -4,12 +4,14 @@ import ApiContext from '../ApiContext'
 import { findNote } from '../notes-helpers'
 import './NotePageMain.css'
 import NoteError from '../NoteError.js'
+import PropTypes from 'prop-types'
 
 export default class NotePageMain extends React.Component {
   static defaultProps = {
     match: {
       params: {}
-    }
+    },
+    noteId: ''
   }
   static contextType = ApiContext
 
@@ -39,4 +41,10 @@ export default class NotePageMain extends React.Component {
       </NoteError>
     )
   }
+}
+
+NotePageMain.propTypes = {
+  noteId: PropTypes.string.isRequired,
+  match: PropTypes.object.isRequired,
+  history: PropTypes.object.isRequired
 }

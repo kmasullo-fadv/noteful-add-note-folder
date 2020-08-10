@@ -2,6 +2,7 @@ import React from 'react'
 import NotefulForm from './NotefulForm/NotefulForm'
 import ApiContext from './ApiContext'
 import config from './config'
+import PropTypes from 'prop-types'
 
 export default class AddNote extends React.Component {
 
@@ -50,9 +51,13 @@ export default class AddNote extends React.Component {
                 <label htmlFor="newNoteName">Name: </label>
                 <input type="text" id="newNoteName" name="newNoteName" required/>
                 <label htmlFor="newNoteContent">Note: </label>
-                <textarea id="newNoteContent" rows="14" cols="10" wrap="soft" name="newNoteContent"/>
+                <textarea id="newNoteContent" rows="14" cols="10" wrap="soft" name="newNoteContent" required/>
                 <button type="submit">Save</button>
             </NotefulForm>
         )
     }
+}
+
+AddNote.propTypes = {
+  history: PropTypes.object.isRequired
 }
